@@ -24,57 +24,57 @@ Answer 1
 
 Answer 2
 
-Test Case No.: TC001
-Test Case: การโอน Point โดยจำนวน Point มากกว่าขั้นต่ำ
-Description: ทดสอบการโอน Point โดยจำนวน Point มากกว่าขั้นต่ำที่กำหนด
-Test Data: จำนวน Point = 150, Passcode = 1234
-Test Step: 1.เปิดแอปพลิเคชันและเข้าสู่ระบบ
-           2.เลือกทำรายการโอน Point และระบุจำนวน Point และ Passcode
-           3.กดยืนยันการทำรายการ
-Expect Result: การทำรายการสำเร็จโดยไม่มีการคิดค่า Fee
-Priority: High
-Technique: Boundary Value Analysis (BVA)
-
-Test Case No.: TC002
-Test Case: การโอน Point โดยจำนวน Point น้อยกว่าขั้นต่ำและระบบคิดค่า Fee
-Description: ทดสอบการโอน Point โดยจำนวน Point น้อยกว่าขั้นต่ำที่กำหนด และระบบคิดค่า Fee 8 Point เพิ่มเข้าไป
-Test Data: จำนวน Point = 50, Passcode = 1234
-Test Step: 1.เปิดแอปพลิเคชันและเข้าสู่ระบบ
-           2.เลือกทำรายการโอน Point และระบุจำนวน Point และ Passcode
-           3.กดยืนยันการทำรายการ
-Expect Result: การทำรายการสำเร็จและระบบคิดค่า Fee 8 Point จากจำนวน Point ที่โอน
-Priority: High
-Technique: Boundary Value Analysis (BVA)
-
-Test Case No.: TC003
-Test Case: การโอน Point โดยจำนวน Point เกินขีดจำกัดสูงสุด
-Description: ทดสอบการโอน Point โดยจำนวน Point เกินขีดจำกัดสูงสุดที่กำหนด
-Test Data: จำนวน Point = 3,200, Passcode = 1234
-Test Step: 1.เปิดแอปพลิเคชันและเข้าสู่ระบบ
-           2.เลือกทำรายการโอน Point และกรอกจำนวน Point และ Passcode
-           3.กดยืนยันการทำรายการ
-Expect Result: การทำรายการล้มเหลวเนื่องจากจำนวน Point เกินขีดจำกัดสูงสุด
-Priority: High
-Technique: Boundary Value Analysis (BVA)
-
-Test Case No.: TC004
-Test Case: การโอน Point โดยกรอก Passcode ไม่ถูกต้อง
-Description: ทดสอบการโอน Point โดยกรอก Passcode ไม่ถูกต้อง
-Test Data: จำนวน Point = 200, Passcode = 1111
-Test Step: 1.เปิดแอปพลิเคชันและเข้าสู่ระบบ
-           2.เลือกทำรายการโอน Point และกรอกจำนวน Point และ Passcode
-           3.กดยืนยันการทำรายการ
-Expect Result: การทำรายการล้มเหลวเนื่องจาก Passcode ไม่ถูกต้อง
-Priority: High
-Technique: Equivalence Partitioning
-
-Test Case No.: TC005
-Test Case: การโอน Point โดยจำนวน Point มากกว่าขั้นต่ำและกรอก Passcode ถูกต้อง
-Description: ทดสอบการโอน Point โดยจำนวน Point มากกว่าขั้นต่ำและกรอก Passcode ถูกต้อง
-Test Data: จำนวน Point = 500, Passcode = 1234
-Test Step: 1.เปิดแอปพลิเคชันและเข้าสู่ระบบ
-           2.เลือกทำรายการโอน Point และกรอกจำนวน Point และ Passcode
-           3.กดยืนยันการทำรายการ
-Expect Result: การทำรายการสำเร็จและไม่คิดค่า Fee
-Priority: High
-Technique: Decision Table Testing
+            Test Case No.: TC001
+            Test Case: การโอน Point โดยจำนวน Point มากกว่าขั้นต่ำ
+            Description: ทดสอบการโอน Point โดยจำนวน Point มากกว่าขั้นต่ำที่กำหนด
+            Test Data: จำนวน Point = 150, Passcode = 1234
+            Test Step: 1.เปิดแอปพลิเคชันและเข้าสู่ระบบ
+                       2.เลือกทำรายการโอน Point และระบุจำนวน Point และ Passcode
+                       3.กดยืนยันการทำรายการ
+            Expect Result: การทำรายการสำเร็จโดยไม่มีการคิดค่า Fee
+            Priority: High
+            Technique: Boundary Value Analysis (BVA)
+            
+            Test Case No.: TC002
+            Test Case: การโอน Point โดยจำนวน Point น้อยกว่าขั้นต่ำและระบบคิดค่า Fee
+            Description: ทดสอบการโอน Point โดยจำนวน Point น้อยกว่าขั้นต่ำที่กำหนด และระบบคิดค่า Fee 8 Point เพิ่มเข้าไป
+            Test Data: จำนวน Point = 50, Passcode = 1234
+            Test Step: 1.เปิดแอปพลิเคชันและเข้าสู่ระบบ
+                       2.เลือกทำรายการโอน Point และระบุจำนวน Point และ Passcode
+                       3.กดยืนยันการทำรายการ
+            Expect Result: การทำรายการสำเร็จและระบบคิดค่า Fee 8 Point จากจำนวน Point ที่โอน
+            Priority: High
+            Technique: Boundary Value Analysis (BVA)
+            
+            Test Case No.: TC003
+            Test Case: การโอน Point โดยจำนวน Point เกินขีดจำกัดสูงสุด
+            Description: ทดสอบการโอน Point โดยจำนวน Point เกินขีดจำกัดสูงสุดที่กำหนด
+            Test Data: จำนวน Point = 3,200, Passcode = 1234
+            Test Step: 1.เปิดแอปพลิเคชันและเข้าสู่ระบบ
+                       2.เลือกทำรายการโอน Point และกรอกจำนวน Point และ Passcode
+                       3.กดยืนยันการทำรายการ
+            Expect Result: การทำรายการล้มเหลวเนื่องจากจำนวน Point เกินขีดจำกัดสูงสุด
+            Priority: High
+            Technique: Boundary Value Analysis (BVA)
+            
+            Test Case No.: TC004
+            Test Case: การโอน Point โดยกรอก Passcode ไม่ถูกต้อง
+            Description: ทดสอบการโอน Point โดยกรอก Passcode ไม่ถูกต้อง
+            Test Data: จำนวน Point = 200, Passcode = 1111
+            Test Step: 1.เปิดแอปพลิเคชันและเข้าสู่ระบบ
+                       2.เลือกทำรายการโอน Point และกรอกจำนวน Point และ Passcode
+                       3.กดยืนยันการทำรายการ
+            Expect Result: การทำรายการล้มเหลวเนื่องจาก Passcode ไม่ถูกต้อง
+            Priority: High
+            Technique: Equivalence Partitioning
+            
+            Test Case No.: TC005
+            Test Case: การโอน Point โดยจำนวน Point มากกว่าขั้นต่ำและกรอก Passcode ถูกต้อง
+            Description: ทดสอบการโอน Point โดยจำนวน Point มากกว่าขั้นต่ำและกรอก Passcode ถูกต้อง
+            Test Data: จำนวน Point = 500, Passcode = 1234
+            Test Step: 1.เปิดแอปพลิเคชันและเข้าสู่ระบบ
+                       2.เลือกทำรายการโอน Point และกรอกจำนวน Point และ Passcode
+                       3.กดยืนยันการทำรายการ
+            Expect Result: การทำรายการสำเร็จและไม่คิดค่า Fee
+            Priority: High
+            Technique: Decision Table Testing
