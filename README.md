@@ -185,7 +185,6 @@ Answer
     }
 
 Answer
-
           
             สำหรับการทดสอบ API โดยใช้ Postman สามารถทำได้ตามขั้นตอนดังนี้:           
             1.ดาวน์โหลดและติดตั้ง Postman จาก https://www.postman.com/downloads/
@@ -203,12 +202,11 @@ Answer
                 Headers: Content-Type: application/json
                 Body (raw JSON):
                 
-            json
-            Copy code
-            {
-                "name": "Yourname",
-                "job": "Your Position"
-            }
+              json
+              {
+                  "name": "Yourname",
+                  "job": "Your Position"
+              }
             
               PATCH - Update User:
                 URL: https://reqres.in/api/users/id (Replace "id" with the actual user ID)
@@ -216,12 +214,11 @@ Answer
                 Headers: Content-Type: application/json
                 Body (raw JSON):
                 
-            json
-            Copy code
-            {
-                "name": "Your nickname",
-                "job": "Your Position"
-            }
+              json
+              {
+                  "name": "Your nickname",
+                  "job": "Your Position"
+              }
             
               DELETE - Delete User:
                 URL: https://reqres.in/api/users/id (Replace "id" with the actual user ID)
