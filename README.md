@@ -150,3 +150,35 @@ Answer 4
 -Verify badge บนรถเข็นว่าเหลือหนังสือเท่ากับ 0
 
 Answer 
+
+## Section 3: Automate Testing API Skills
+
+จงใช้ Postman, Robot framework หรือ Selenium เพื่อพัฒนาระบบทดสอบ API โดยให้ส่ง Request และตรวจสอบ Response แบบ Automate Testing
+
+GET - All Users : https://reqres.in/api/users [Status code : 200]
+
+GET - User Info : https://reqres.in/api/users/1 [Status code : 200]
+
+POST - Create User : https://reqres.in/api/users [Status code : 201]
+
+//request body example
+{
+    "name": "Yourname",
+    "job": "Your Position"
+}
+PATCH - Update User : https://reqres.in/api/users/id [Status code : 200]
+
+//Required id From Create User
+//request body example
+{
+    "name": "Your nickname",
+    "job": "Your Position"
+}
+DELETE - Delete User : https://reqres.in/api/users/id [Status code : 204]
+
+//Required id From Create User
+//request body example
+{
+    "name": "Your nickname",
+    "job": "Your Position"
+}
