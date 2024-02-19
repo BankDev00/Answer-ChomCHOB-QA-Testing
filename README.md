@@ -202,7 +202,7 @@ Answer
                 Headers: Content-Type: application/json
                 Body (raw JSON):
                 
-              json
+              //json
               {
                   "name": "Yourname",
                   "job": "Your Position"
@@ -214,7 +214,7 @@ Answer
                 Headers: Content-Type: application/json
                 Body (raw JSON):
                 
-              json
+              //json
               {
                   "name": "Your nickname",
                   "job": "Your Position"
