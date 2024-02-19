@@ -216,6 +216,7 @@ POST - Create User:
     
     Body (raw JSON):
                 
+              
               //json
               {
                   "name": "Yourname",
@@ -232,6 +233,7 @@ PATCH - Update User:
     
     Body (raw JSON):
                 
+              
               //json
               {
                   "name": "Your nickname",
