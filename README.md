@@ -151,6 +151,114 @@ Answer 4
 
 Answer 
 
+          *** Settings ***
+          Library    SeleniumLibrary
+          
+          *** Variables ***
+          ${url}                         https://www.nejavu.com
+          ${browser}                     Chrome
+          ${locator_btnclose}            xpath=//*[@id="top"]/main/div[2]/div[1]/a
+          ${locator_menucartoon}         xpath=//*[@id="top"]/main/div[1]/div[2]/div[2]/div[2]/nav/div/ul/li[3]/a
+          ${locator_bookname1}           xpath=//*[@id="top"]/main/div[1]/div[3]/div[1]/div[6]/div[2]/div[1]/div/div[2]/a[1]/h5
+          ${locator_bookname2}           xpath=//*[@id="top"]/main/div[1]/div[3]/div[1]/div[6]/div[2]/div[2]/div/div[2]/a[1]/h5
+          ${locator_bookname3}           xpath=//*[@id="top"]/main/div[1]/div[3]/div[1]/div[6]/div[2]/div[3]/div/div[2]/a[1]/h5
+          ${locator_bookname4}           xpath=//*[@id="top"]/main/div[1]/div[3]/div[1]/div[6]/div[2]/div[4]/div/div[2]/a[1]/h5
+          ${locator_bookname5}           xpath=//*[@id="top"]/main/div[1]/div[3]/div[1]/div[6]/div[2]/div[5]/div/div[2]/a[1]/h5
+          ${locator_addcart1}            xpath=/html/body/main/div[1]/div[3]/div[1]/div[6]/div[2]/div[1]/div/div[3]/div[2]/form/button
+          ${locator_addcart2}            xpath=/html/body/main/div[1]/div[3]/div[1]/div[6]/div[2]/div[2]/div/div[3]/div[2]/form/button
+          ${locator_addcart3}            xpath=/html/body/main/div[1]/div[3]/div[1]/div[6]/div[2]/div[3]/div/div[3]/div[2]/form/button
+          ${locator_addcart4}            xpath=/html/body/main/div[1]/div[3]/div[1]/div[6]/div[2]/div[4]/div/div[3]/div[2]/form/button
+          ${locator_addcart5}            xpath=/html/body/main/div[1]/div[3]/div[1]/div[6]/div[2]/div[5]/div/div[3]/div[2]/form/button
+          ${locator_cart}                xpath=//*[@id="top"]/main/div[1]/div[1]/div/div/div[2]/div/div[4]/ul/li[2]/div/a
+          ${locator_verifybc1}           xpath=//*[@id="cart"]/div[2]/div[2]/div[1]/div/div[2]/p[1]/strong
+          ${locator_verifybc2}           xpath=//*[@id="cart"]/div[2]/div[3]/div[1]/div/div[2]/p[1]/strong
+          ${locator_verifybc3}           xpath=//*[@id="cart"]/div[2]/div[4]/div[1]/div/div[2]/p[1]/strong
+          ${locator_verifybc4}           xpath=//*[@id="cart"]/div[2]/div[5]/div[1]/div/div[2]/p[1]/strong
+          ${locator_verifybc5}           xpath=//*[@id="cart"]/div[2]/div[6]/div[1]/div/div[2]/p[1]/strong
+          ${locator_removebook}          xpath=//*[@id="top"]/div/div/div[3]/button[1]
+          ${locator_remove1}             xpath=/html/body/main/div[1]/div[3]/div[1]/div/div/div[2]/div[2]/div[5]
+          ${locator_remove2}             xpath=/html/body/main/div[1]/div[3]/div[1]/div/div/div[2]/div[3]/div[5]
+          ${locator_remove3}             xpath=/html/body/main/div[1]/div[3]/div[1]/div/div/div[2]/div[4]/div[5]
+          ${locator_remove4}             xpath=/html/body/main/div[1]/div[3]/div[1]/div/div/div[2]/div[5]/div[5]
+          ${locator_remove5}             xpath=/html/body/main/div[1]/div[3]/div[1]/div/div/div[2]/div[6]/div[5]
+          ${locator_badge}               xpath=//*[@id="top"]/main/div[1]/div[3]/div[1]/div/div/h2/strong
+          ${locator_scroll}              xpath=//*[@id="top"]/main/div[1]/div[3]/div[1]/div[6]/div[2]/div[6]/div/div[1]/div[1]/a/img
+          
+          *** Keywords ***
+          Open Browsers
+              #ใช้คำสั่ง                             ส่ง locator                           ส่งข้อความ text
+              Set Selenium Speed                  0.5s   
+              # โดยการส่ง                          Url                                  และ Browser ที่ใช้
+              Open Browser                        ${url}                               ${browser}                            options=add_experimental_option("excludeSwitches", ["enable-logging"])
+              #ใช้คำสั่งเพื่อทำการขยายหน้าเว็บ
+              Maximize Browser Window
+          Close Popup If Exists
+              ${modal_visible}    Run Keyword And Return Status    
+              ...    Wait Until Element Is Visible    ${locator_btnclose}    3s
+              Run Keyword If    ${modal_visible}    Click Element    ${locator_btnclose}
+          
+          Verify Books Name Row 1
+              ${bookname1}=    Get Text     ${locator_bookname1}
+              Should Be Equal As Strings    ${bookname1}     สายใยครั้งนั้นกับทานตะวันมิหวนคืน เล่ม 1
+              ${bookname2}=    Get Text     ${locator_bookname2}
+              Should Be Equal As Strings    ${bookname2}     ฝันดีนะ ปุนปุน เล่ม 9
+              ${bookname3}=    Get Text     ${locator_bookname3}
+              Should Be Equal As Strings    ${bookname3}     รักล้นใจของยัยสาวเมด เล่ม 8
+              ${bookname4}=    Get Text     ${locator_bookname4}
+              Should Be Equal As Strings    ${bookname4}     Trillion Game เกมชีวิตพิชิตล้านล้าน เล่ม 4
+              ${bookname5}=    Get Text     ${locator_bookname5}
+              Should Be Equal As Strings    ${bookname5}     DRAGON BALL ดราก้อนบอล เล่ม 41
+          
+          Add Books To Cart
+              Click Element    ${locator_addcart1}  
+              Click Element    ${locator_addcart2}  
+              Click Element    ${locator_addcart3}  
+              Click Element    ${locator_addcart4}  
+              Click Element    ${locator_addcart5}
+          
+          Verify Cart Contents
+              ${bookname}=    Get Text     ${locator_verifybc1}
+              Should Be Equal As Strings   ${bookname}     สายใยครั้งนั้นกับทานตะวันมิหวนคืน เล่ม 1
+              ${bookname}=    Get Text     ${locator_verifybc2}
+              Should Be Equal As Strings   ${bookname}     ฝันดีนะ ปุนปุน เล่ม 9
+              ${bookname}=    Get Text     ${locator_verifybc3}
+              Should Be Equal As Strings   ${bookname}     รักล้นใจของยัยสาวเมด เล่ม 8
+              ${bookname}=    Get Text     ${locator_verifybc4}
+              Should Be Equal As Strings   ${bookname}     Trillion Game เกมชีวิตพิชิตล้านล้าน เล่ม 4
+              ${bookname}=    Get Text     ${locator_verifybc5}
+              Should Be Equal As Strings   ${bookname}     DRAGON BALL ดราก้อนบอล เล่ม 41
+          
+          Remove Books From Cart
+              Click Element    ${locator_remove1}
+              Click Element    ${locator_removebook}
+              Click Element    ${locator_remove2}
+              Click Element    ${locator_removebook}
+              Click Element    ${locator_remove3}
+              Click Element    ${locator_removebook}
+              Click Element    ${locator_remove4}
+              Click Element    ${locator_removebook} 
+              Click Element    ${locator_remove5}
+              Click Element    ${locator_removebook}    
+          
+          Verify Cart Badge Is Zero
+              ${badge_value} =    Get Text  ${locator_badge}
+              Should Be Equal As Strings    ${badge_value}    ยังไม่มีรายการสินค้าในตะกร้า โปรดสั่งซื้อสินค้า
+          
+          *** Test Cases ***
+          Test Nejavu Website
+              Open Browsers
+              Close Popup If Exists
+              Click Element                    ${locator_menucartoon}
+              Scroll Element Into View         ${locator_scroll}
+              Verify Books Name Row 1
+              Add Books To Cart
+              Click Element                    ${locator_cart}  
+              Verify Cart Contents
+              Remove Books From Cart
+              Verify Cart Badge Is Zero
+              Close Browser
+
+
 ## Section 3: Automate Testing API Skills
 
 จงใช้ Postman, Robot framework หรือ Selenium เพื่อพัฒนาระบบทดสอบ API โดยให้ส่ง Request และตรวจสอบ Response แบบ Automate Testing
