@@ -185,7 +185,7 @@ Answer
             #ใช้คำสั่ง                             ส่ง locator                           ส่งข้อความ text
             Set Selenium Speed                  0.5s   
             # โดยการส่ง                          Url                                  และ Browser ที่ใช้
-            Open Browser                        ${url}                               ${browser}                            options=add_experimental_option("excludeSwitches", ["enable-logging"])
+            Open Browser                        ${url}                               ${browser}     
             #ใช้คำสั่งเพื่อทำการขยายหน้าเว็บ
             Maximize Browser Window
         Close Popup If Exists
