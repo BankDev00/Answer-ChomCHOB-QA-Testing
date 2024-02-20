@@ -186,13 +186,11 @@ Answer
 
 Answer
           
-สำหรับการทดสอบ API โดยใช้ Postman สามารถทำได้ตามขั้นตอนดังนี้:
+สำหรับการทดสอบ API ใช้ Postman 
 
-1.ดาวน์โหลดและติดตั้ง Postman จาก https://www.postman.com/downloads/
+1.เปิด Postman และสร้าง Collection ใหม่โดยคลิกที่ "New" > "Collection" แล้วตั้งชื่อ Collection เช่น "API Testing"
 
-2.เปิด Postman และสร้าง Collection ใหม่โดยคลิกที่ "New" > "Collection" แล้วตั้งชื่อ Collection เช่น "API Testing"
-
-3.เพิ่ม Request แต่ละชนิดเข้าไปใน Collection โดยใช้ URL และ Method ตามที่กำหนด
+2.เพิ่ม Request แต่ละชนิดเข้าไปใน Collection โดยใช้ URL และ Method ตามที่กำหนด
 
 GET - All Users:
 
@@ -212,8 +210,6 @@ POST - Create User:
     
  - Method: POST
     
- - Headers: Content-Type: application/json
-    
  - Body (raw JSON):              
               
               //json
@@ -227,8 +223,6 @@ PATCH - Update User:
  - URL: https://reqres.in/api/users/id (Replace "id" with the actual user ID)
     
  - Method: PATCH
-    
- - Headers: Content-Type: application/json
     
  - Body (raw JSON):                
               
@@ -244,8 +238,8 @@ DELETE - Delete User:
   
  - Method: DELETE
   
-4.เพิ่มการตรวจสอบ Response ด้วยการเพิ่ม Tests ในแต่ละ Request ตามความต้องการ เช่น ตรวจสอบ status code หรือเนื้อหาของ Response
+3.เพิ่มการตรวจสอบ Response ด้วยการเพิ่ม Tests ในแต่ละ Request ตามความต้องการ เช่น ตรวจสอบ status code หรือเนื้อหาของ Response
 
-5.รันทุก Request และตรวจสอบผลลัพธ์
+4.รันทุก Request และตรวจสอบผลลัพธ์
 
-6.สามารถทำการ Export Collection เพื่อนำไปใช้งานหรือแบ่งปันได้
+5.สามารถทำการ Export Collection เพื่อนำไปใช้งานหรือแบ่งปันได้
